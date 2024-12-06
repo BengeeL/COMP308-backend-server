@@ -9,8 +9,8 @@ const resolvers = {
   // ****************** QUERIES ******************
   Query: {
     // ------------------ User ------------------
-    currentUser: async (_, { token }, { req }) => {
-      // const token = req.cookies["token"];
+    currentUser: async (_, _, { req }) => {
+      const token = req.cookies["token"];
       if (!token) {
         console.error("No token found in cookies");
         return null;
@@ -97,13 +97,11 @@ const resolvers = {
         }
       );
 
-      // Store token in an HTTP-only cookie
       res.cookie("token", token, {
         httpOnly: true,
         maxAge: 24 * 60 * 60 * 1000, // 1 day
-        // sameSite: "None", // Ensure cookie works across the same site
-        sameSite: "Lax", // Ensure cookie works across the same site
-        // secure: true, // Ensure cookie is only sent over HTTPS
+        sameSite: "None", // Ensure cookie works across different sites
+        secure: true, // Ensure cookie is only sent over HTTPS
       });
 
       console.log("Logged in user: ", user);

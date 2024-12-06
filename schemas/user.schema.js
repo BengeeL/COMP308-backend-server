@@ -13,7 +13,6 @@ const typeDefs = gql`
     motivationalTips: [MotivationalTip]
     symptomsRiskPrediction: String
     symptoms: [String]
-    token: String
   }
 
   type VitalSign {
@@ -45,7 +44,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    currentUser(token: String!): User
+    currentUser: User
     getUser(id: ID!): User
     listUsers(role: String): [User] # Filter by role
     getRandomMotivationalTip: MotivationalTip
