@@ -26,6 +26,7 @@ app.use(
       "http://localhost:3003",
       "http://localhost:4000",
       "https://studio.apollographql.com",
+      "https://shimmering-trifle-a4c13e.netlify.app/",
     ],
     credentials: true,
   })
