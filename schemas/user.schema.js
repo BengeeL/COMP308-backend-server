@@ -44,7 +44,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    currentUser: User
+    currentUser(token: String!): User
     getUser(id: ID!): User
     listUsers(role: String): [User] # Filter by role
     getRandomMotivationalTip: MotivationalTip
