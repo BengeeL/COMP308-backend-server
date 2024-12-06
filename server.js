@@ -26,7 +26,7 @@ app.use(
       "http://localhost:3003",
       "http://localhost:4000",
       "https://studio.apollographql.com",
-      "https://sage-fudge-1d34ca.netlify.app/",
+      "https://sage-fudge-1d34ca.netlify.app",
       "https://comp308-tensorflow-server.onrender.com",
     ],
     credentials: true,
