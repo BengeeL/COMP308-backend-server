@@ -23,6 +23,7 @@ app.use(
       "http://localhost:4001",
       "https://studio.apollographql.com",
       "https://shimmering-trifle-a4c13e.netlify.app/",
+      "https://comp308-tensorflow-server.onrender.com",
     ],
     credentials: true,
   })
