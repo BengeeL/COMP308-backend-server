@@ -106,7 +106,6 @@ const resolvers = {
 
       console.log("Logged in user: ", user);
       console.log("Token: ", token);
-      user.token = token;
 
       return user; // Indicating successful login
     },
@@ -118,9 +117,19 @@ const resolvers = {
       return user;
     },
 
-    logout: async (_, __, { res }) => {
+    logout: async (_, __, { res, req }) => {
       console.log("Logging out user");
-      res.clearCookie("token");
+      if (!res) {
+        console.error("Response object is not available");
+        return false;
+      }
+      res.clearCookie("token", {
+        httpOnly: true,
+        sameSite: "None",
+        secure: true,
+      });
+      console.log("Token cookie cleared");
+      console.log("Current cookies after clearing:", req.cookies);
       return true;
     },
 
