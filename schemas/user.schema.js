@@ -13,6 +13,7 @@ const typeDefs = gql`
     motivationalTips: [MotivationalTip]
     symptomsRiskPrediction: String
     symptoms: [String]
+    token: String
   }
 
   type VitalSign {

@@ -108,6 +108,7 @@ const resolvers = {
 
       console.log("Logged in user: ", user);
       console.log("Token: ", token);
+      user.token = token;
 
       return user; // Indicating successful login
     },
