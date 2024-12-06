@@ -9,7 +9,7 @@ const resolvers = {
   // ****************** QUERIES ******************
   Query: {
     // ------------------ User ------------------
-    currentUser: async (_, _, { req }) => {
+    currentUser: async (_, __, { req }) => {
       const token = req.cookies["token"];
       if (!token) {
         console.error("No token found in cookies");
